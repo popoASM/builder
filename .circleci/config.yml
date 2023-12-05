@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: xyzuan/xdocker:latest
+   steps:
+      - run:
+          command: |
+            curl -s https://raw.githubusercontent.com/popoASM/builder/kernelpopo.sh | bash
+          no_output_timeout : 2h
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile 

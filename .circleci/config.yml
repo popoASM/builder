@@ -6,7 +6,7 @@ jobs:
    steps:
       - run:
           command: |
-            curl -s https://raw.githubusercontent.com/popoASM/builder/kernelpopo.sh | bash
+            curl -s https://raw.githubusercontent.com/popoASM/builder/main/kernelpopo.sh | bash
           no_output_timeout : 2h
 workflows:
   version: 2.1

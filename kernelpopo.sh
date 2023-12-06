@@ -29,9 +29,9 @@ ccache -o compression=true
 ccache -z
 
 # Cloning clang
-if ! [ -d "$HOME/cosmic" ]; then
+if ! [ -d "$HOME/crdroid" ]; then
 echo "Clang not found! Cloning..."
-if ! git clone https://gitlab.com/GhostMaster69-dev/cosmic-clang --depth=1 --single-branch ~/cosmic; then
+if ! git clone https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r498229b --depth=1 --single-branch ~/crdroid; then
 echo "Cloning failed! Aborting..."
 exit 1
 fi
@@ -41,11 +41,11 @@ SECONDS=0 # builtin bash timer
 ZIPNAME="popotron-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
 DEFCONFIG="vendor/xiaomi/miatoll_defconfig" #your_defconfig
 
-export PATH="$HOME/cosmic/bin:$PATH"
+export PATH="$HOME/crdroid/bin:$PATH"
 export ARCH=arm64
 export KBUILD_BUILD_USER=popoASM #your_name
 export KBUILD_BUILD_HOST=CircleCI
-export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
+export KBUILD_COMPILER_STRING="$($HOME/crdroid/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 
 echo -e "\nStarting compilation...\n"
 

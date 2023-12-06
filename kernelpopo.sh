@@ -1,8 +1,5 @@
 #!/bin/bash
 
-mkdir -p /tmp/kernel
-cd /tmp/kernel
-
 # Replace with your kernel link and branch
 KT_LINK=https://github.com/BlissRoms-Devices/platform_kernel_xiaomi_sm6250 #your_kernel_link
 KT_BRANCH=universe #your_branch

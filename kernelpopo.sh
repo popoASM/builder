@@ -36,7 +36,7 @@ fi
 
 SECONDS=0 # builtin bash timer
 ZIPNAME="popotron-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
-DEFCONFIG="vendor/xiaomi/miatoll_defconfig" #your_defconfig
+#DEFCONFIG="vendor/xiaomi/miatoll_defconfig" #your_defconfig
 
 export PATH="$HOME/crdroid/bin:$PATH"
 export ARCH=arm64
@@ -48,7 +48,7 @@ echo -e "\nStarting compilation...\n"
 
 mkdir -p out
 make O=out
-make $DEFCONFIG O=out
+make vendor/xiaomi/miatoll_defconfig O=out
 
 # To use these you have to use the given flags
 if [[ $1 = "-c" || $1 = "--clean" ]]; then

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Replace with your kernel link and branch
-KT_LINK=https://github.com/SonalSingh18/android_kernel_xiaomi_sm6250 #your_kernel_link
-KT_BRANCH=udc #your_branch
+KT_LINK=https://github.com/popoASM/android_kernel_xiaomi_sm6250 #your_kernel_link
+KT_BRANCH=14.0 #your_branch
 
 git clone $KT_LINK -b $KT_BRANCH korni --depth=1 --single-branch
 cd korni
@@ -35,13 +35,13 @@ fi
 fi
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="popotron-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
+ZIPNAME="popotron_KSU-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
 DEFCONFIG="vendor/xiaomi/miatoll_defconfig" #your_defconfig
 
 export PATH="$HOME/cosmic/bin:$PATH"
 export ARCH=arm64
 export KBUILD_BUILD_USER=popoASM #your_name
-export KBUILD_BUILD_HOST=Cirrus-CI
+export KBUILD_BUILD_HOST=Circle-CI
 export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 
 echo -e "\nStarting compilation...\n"

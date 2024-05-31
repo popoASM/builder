@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Replace with your kernel link and branch
-KT_LINK=https://github.com/popoASM/android_kernel_xiaomi_sm6250 #your_kernel_link
-KT_BRANCH=14.0 #your_branch
+KT_LINK=https://github.com/xiaomi-sm6250-devs/android_kernel_xiaomi_sm6250 #your_kernel_link
+KT_BRANCH=lineage-21 #your_branch
 
 git clone $KT_LINK -b $KT_BRANCH korni --depth=1 --single-branch
 cd korni
@@ -35,7 +35,7 @@ fi
 fi
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="popotron_KSU-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
+ZIPNAME="los21-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
 DEFCONFIG="vendor/xiaomi/miatoll_defconfig" #your_defconfig
 
 export PATH="$HOME/cosmic/bin:$PATH"

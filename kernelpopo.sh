@@ -35,7 +35,7 @@ fi
 fi
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="popotron_KSU-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
+ZIPNAME="los_KSU-$(date '+%Y%m%d-%H%M').zip" #your_kernel_name
 DEFCONFIG="vendor/xiaomi/miatoll_defconfig" #your_defconfig
 
 export PATH="$HOME/cosmic/bin:$PATH"
